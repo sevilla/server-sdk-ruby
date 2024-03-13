@@ -20,7 +20,8 @@ module LiveKit
         metadata: nil,
         min_playout_delay: nil,
         max_playout_delay: nil,
-        sync_streams: nil
+        sync_streams: nil,
+        departure_timeout: nil
       )
       self.rpc(
         :CreateRoom,
@@ -32,7 +33,8 @@ module LiveKit
           metadata: metadata,
           min_playout_delay: min_playout_delay,
           max_playout_delay: max_playout_delay,
-          sync_streams: sync_streams
+          sync_streams: sync_streams,
+          departure_timeout: departure_timeout
         ),
         headers: auth_header(roomCreate: true),
       )
