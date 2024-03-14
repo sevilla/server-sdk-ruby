@@ -131,6 +131,18 @@ You may store credentials in environment variables. If api-key or api-secret is 
 - `LIVEKIT_API_KEY`
 - `LIVEKIT_API_SECRET`
 
+### Updating Proto Files
+
+* Install protoc binaries with `bin/bootstrap.sh`
+* Update the protocol submodule
+```
+git submodule update --recursive --remote
+```
+* Update the files with the proto rake task
+```
+./bin/rake proto
+```
+
 ## License
 
 The gem is available as open source under the terms of Apache 2.0 License.
