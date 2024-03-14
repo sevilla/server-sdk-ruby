@@ -15,26 +15,26 @@ module LiveKit
 
     def create_room(name,
         empty_timeout: nil,
+        departure_timeout: nil,
         max_participants: nil,
         egress: nil,
         metadata: nil,
         min_playout_delay: nil,
         max_playout_delay: nil,
-        sync_streams: nil,
-        departure_timeout: nil
+        sync_streams: nil
       )
       self.rpc(
         :CreateRoom,
         Proto::CreateRoomRequest.new(
           name: name,
           empty_timeout: empty_timeout,
+          departure_timeout: departure_timeout,
           max_participants: max_participants,
           egress: egress,
           metadata: metadata,
           min_playout_delay: min_playout_delay,
           max_playout_delay: max_playout_delay,
-          sync_streams: sync_streams,
-          departure_timeout: departure_timeout
+          sync_streams: sync_streams
         ),
         headers: auth_header(roomCreate: true),
       )
